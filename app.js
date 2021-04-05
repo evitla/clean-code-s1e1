@@ -41,9 +41,9 @@ var createNewTaskElement=function(taskString){
   editInput.className="task";
 
   editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-  editButton.className="edit";
+  editButton.className="btn edit";
 
-  deleteButton.className="delete";
+  deleteButton.className="btn delete";
   deleteButtonImg.src="./remove.svg";
   deleteButton.appendChild(deleteButtonImg);
 
@@ -65,6 +65,8 @@ var addTask=function(){
   if (!taskInput.value) return;
   var listItem=createNewTaskElement(taskInput.value);
 
+  listItem.classList.add("task-list-item")
+  
   //Append listItem to incompleteTaskHolder
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
@@ -91,9 +93,12 @@ var editTask=function(){
 
       //switch to .editmode
       //label becomes the inputs value.
+      editInput.classList.add("text-input");
+      
       label.innerText=editInput.value;
       editBtn.innerText="Edit";
-  }else{
+    }else{
+      editInput.classList.add("text-input");
       editInput.value=label.innerText;
       editBtn.innerText="Save";
   }
