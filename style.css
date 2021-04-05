@@ -34,6 +34,7 @@ body {
 }
 .task-row-wrapper {
   display: flex;
+  margin: 20px 0 0;
 }
 ul {
   margin: 0;
@@ -60,8 +61,7 @@ button {
   color: #3a3a3a;
 }
 /* Heading */
-.title,
-.new-task-label {
+.title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -87,10 +87,6 @@ button {
 }
 
 /* New Task */
-.new-task-label {
-  display: block;
-  margin: 0 0 20px;
-}
 #new-task {
   width: 318px;
 }
